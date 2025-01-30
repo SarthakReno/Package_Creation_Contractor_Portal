@@ -1,6 +1,7 @@
 package Reno_Contractor_Portal;
 
 import Locators.LoginScreen;
+import Locators.Package_Creation;
 import Utility.Constants;
 import Utility.Functions;
 import org.openqa.selenium.WebDriver;
@@ -16,10 +17,13 @@ public class login_main {
     public static void main(String[] args) throws InterruptedException {
         functionCall = new Functions(driver);
         LoginScreen loginScreen = new LoginScreen(driver);
+        Package_Creation packageCreation = new Package_Creation(driver);
 
         Functions.MyChromeDriver();
         Functions.simpleWait(Constants.wait_2);
         loginScreen.Reno_Contractor_login();
+        Functions.simpleWait(Constants.wait_2);
+        packageCreation.Contractor_Package_Creation();
 
     }
 }
